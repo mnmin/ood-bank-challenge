@@ -1,9 +1,9 @@
 
 class Transaction {
     constructor() {
-        this.date = date,
-        this.credit = credit
-        this.debit = debit
+        this.date = 'date'
+        this.credit = 'credit'
+        this.debit = 'debit'
         this.thansaction = []
         this.withdrawl 
     }

@@ -9,25 +9,25 @@ class Transaction {
     }
 
     makeDeposit(date, credit) {
-        const transaction = new Transaction(amount, 'credit');
-        this.#accountTransactions.push(transaction);
-        return transaction;
+        const transaction = new Transaction(date, 'credit')
+        this.#accountTransactions.push(transaction)
+        return transaction
       }
     
       makeWithdrawal(date, debit) {
-        const transaction = new Transaction(amount, 'debit');
-        this.#accountTransactions.push(transaction);
-        return transaction;
+        const transaction = new Transaction(date, 'debit')
+        this.#accountTransactions.push(transaction)
+        return transaction
       }
 
     getStatement() {
-        const transactions = this.Transactions;
-        const statement = new Statement();
-        return statement.printStatement(transactions);
+        const transactions = this.Transactions
+        const statement = new Statement()
+        return statement.printStatement(transactions)
       }
     
     getTransactions() {
-        return this.#accountTransactions;
+        return this.#accountTransactions
       }
 }
 

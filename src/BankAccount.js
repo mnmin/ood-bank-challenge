@@ -1,4 +1,4 @@
-const Transactions = require('./Transactions.js')
+const Transactions = require('./Transaction.js')
 const Statements = require('./Statements.js')
 
 class BankAccount {

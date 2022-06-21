@@ -1,9 +1,9 @@
 const BankAccount = require('./BankAccount.js')
-const Transactions = require('./Transactions.js')
+const Transactions = require('./Transaction.js')
 
 class Statements {
     construcotr() {
-
+        this.transaction = new Transactions()
     }
 }
 

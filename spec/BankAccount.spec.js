@@ -1,4 +1,4 @@
-const Transactions = require('../src/Transactions.js') 
+const Transaction = require('../src/Transaction.js') 
 const BankAccount = require('../src/BankAccount.js')
 const Statements = require('../src/Statements.js')
 
@@ -17,26 +17,35 @@ describe("BankAccount", () => {
 
         expect(0).toEqual(bankAccount.getBalance())
     })
-
-    it("make a bank deposit", () => {
-    
-        const transaction = new Transaction()
-
-        transaction.makeDeposit("20/06/2022", 1000)
-        expect(1000).toEqual(transaction.bankAccount.getBalance())
-    })
+   
 })
 
 describe("Transactions", () => {
     let transactions
 
     beforeEach(() => {
-        transactions = new Transactions
+        transactions = new Transaction()
     })
 
-    it("", () => {
+    it("user makes a bank deposit", () => {
+
+        transaction.newDeposit("20/06/2022", 1000)
+        // Not sure I'm accessing the right class
+        expect(1000).toEqual(transaction.bankAccount.getBalance())
+    })
+
+    it("records a bank deposit", () => {
+
+        transaction.newDeposit("10/01/2012", 1000)
+        // Not sure I'm accessing the right class
+        expect([{ date: '10/01/2022', credit: '1000.00', balance: 1000}]).toEqual(transaction.bankAccount.getTransactions())
+    })
+
+    it("records a bank withdrawl", () => {
     
-    
+        transaction.bankWithdrawl("14/01/2012", 500)
+        // Not sure I'm accessing the right class
+        expect([{ date: '14/01/2021', debit: '500.00', balance: -500}]).toEqual(transaction.bankAccount.getTransactions())
     })
 })
 
